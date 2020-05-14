@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="myFirstcss3.css">
+  <title>The HTML5 </title>
+
+</head>
+
+<body>
+<div class="login-page">
+    <div class="form">
+  <form id="login-form"> 
+  <label> Email </label> <input id="email" type="email" name="email" required size="30"
+      maxlength="30">
+  <label> Username </label> <input id="username" type="text" name="Username" required size="20"
+      maxlength="20">
+  <label> Password </label> <input id="password" type="password" name="password" required size="20"
+      maxlength="20">
+      <button  type="submit" id="form2" value="Submit">Login</button>
+</form>
+  <p> New User? <a href="signup.html">Sign up</a> here </p>
+    </div>
+    </div>
+<script type="text/javascript">
+  const form1 = document.getElementById("login-form");
+  form1.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const request = new XMLHttpRequest()
+    request.open("post", "/login");
+    request.onload = function(){
+      const json = JSON.parse(request.response);
+      if (json.success){
+        window.location.href = 'user.html';
+      }
+      else{
+        window.alert(json.message);
+      }
+    }
+    var data = {
+      email: document.getElementById("email").value,
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value
+    }
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(data));
+  })
+</script>
+
+
+</body>
+</html>

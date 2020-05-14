@@ -1,0 +1,9 @@
+-- get_job db create statement
+CREATE DATABASE `get_job` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+-- users table create statement
+CREATE TABLE `users` (
+  `user_email` varchar(30) NOT NULL,
+  `user_password` varchar(30) NOT NULL,
+  PRIMARY KEY (`user_email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+

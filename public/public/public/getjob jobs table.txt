@@ -1,0 +1,18 @@
+CREATE DATABASE `get_job` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+CREATE TABLE `jobs` (
+  `idjobs` int NOT NULL AUTO_INCREMENT,
+  `job_title` varchar(45) NOT NULL,
+  `job_expdate` varchar(45) NOT NULL,
+  `job_salary` varchar(45) DEFAULT NULL,
+  `job_employer` varchar(45) NOT NULL,
+  `job_description` varchar(10000) DEFAULT NULL,
+  `job_type` varchar(45) NOT NULL,
+  PRIMARY KEY (`idjobs`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `users` (
+  `user_email` varchar(30) NOT NULL,
+  `user_password` varchar(30) NOT NULL,
+  PRIMARY KEY (`user_email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
